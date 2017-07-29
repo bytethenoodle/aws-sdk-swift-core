@@ -17,22 +17,70 @@ protocol NumericType {
     static func -(lhs: Self, rhs: Self) -> Self
     static func *(lhs: Self, rhs: Self) -> Self
     static func /(lhs: Self, rhs: Self) -> Self
-    static func %(lhs: Self, rhs: Self) -> Self
+    static func truncatingRemainder(lhs: Self, rhs: Self) -> Self
     init(_ v: Int)
 }
 
-extension Double : NumericType { }
-extension Float  : NumericType { }
-extension Int    : NumericType { }
-extension Int8   : NumericType { }
-extension Int16  : NumericType { }
-extension Int32  : NumericType { }
-extension Int64  : NumericType { }
-extension UInt   : NumericType { }
-extension UInt8  : NumericType { }
-extension UInt16 : NumericType { }
-extension UInt32 : NumericType { }
-extension UInt64 : NumericType { }
+extension Double : NumericType {
+    static func truncatingRemainder(lhs: Double, rhs: Double) -> Double {
+        return lhs.truncatingRemainder(dividingBy: rhs)
+    }
+}
+extension Float  : NumericType {
+    static func truncatingRemainder(lhs: Float, rhs: Float) -> Float {
+        return lhs.truncatingRemainder(dividingBy: rhs)
+    }
+}
+extension Int    : NumericType {
+    static func truncatingRemainder(lhs: Int, rhs: Int) -> Int {
+        return Int(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension Int8   : NumericType {
+    static func truncatingRemainder(lhs: Int8, rhs: Int8) -> Int8 {
+        return Int8(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension Int16  : NumericType {
+    static func truncatingRemainder(lhs: Int16, rhs: Int16) -> Int16 {
+        return Int16(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension Int32  : NumericType {
+    static func truncatingRemainder(lhs: Int32, rhs: Int32) -> Int32 {
+        return Int32(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension Int64  : NumericType {
+    static func truncatingRemainder(lhs: Int64, rhs: Int64) -> Int64 {
+        return Int64(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension UInt   : NumericType {
+    static func truncatingRemainder(lhs: UInt, rhs: UInt) -> UInt {
+        return UInt(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension UInt8  : NumericType {
+    static func truncatingRemainder(lhs: UInt8, rhs: UInt8) -> UInt8 {
+        return UInt8(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension UInt16 : NumericType {
+    static func truncatingRemainder(lhs: UInt16, rhs: UInt16) -> UInt16 {
+        return UInt16(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension UInt32 : NumericType {
+    static func truncatingRemainder(lhs: UInt32, rhs: UInt32) -> UInt32 {
+        return UInt32(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
+extension UInt64 : NumericType {
+    static func truncatingRemainder(lhs: UInt64, rhs: UInt64) -> UInt64 {
+        return UInt64(Double(lhs).truncatingRemainder(dividingBy: Double(rhs)))
+    }
+}
 
 private func _serialize(value: Any) throws -> String {
     var s = ""
