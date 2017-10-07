@@ -9,6 +9,6 @@ let package = Package(
     ],
     dependencies: [
         .Package(url: "https://github.com/bytethenoodle/Prorsum.git", majorVersion: 0, minor: 1),
-        .Package(url: "https://github.com/noppoMan/HypertextApplicationLanguage.git", majorVersion: 1)
+        .Package(url: "https://github.com/bytethenoodle/HypertextApplicationLanguage.git", majorVersion: 1)
     ]
 )
