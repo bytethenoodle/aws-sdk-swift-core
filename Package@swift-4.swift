@@ -7,8 +7,8 @@ let package = Package(
         .library(name: "AWSSDKSwiftCore", targets: ["AWSSDKSwiftCore"])
     ],
     dependencies: [
-        .package(url: "https://github.com/bytethenoodle/Prorsum.git", .upToNextMajor(from: "0.1.16")),
-        .package(url: "https://github.com/bytethenoodle/HypertextApplicationLanguage.git", .upToNextMajor(from: "1.0.1"))
+        .package(url: "https://github.com/bytethenoodle/Prorsum.git", .upToNextMajor(from: "0.1.17")),
+        .package(url: "https://github.com/bytethenoodle/HypertextApplicationLanguage.git", .upToNextMajor(from: "1.0.2"))
     ],
     targets: [
         .target(name: "AWSSDKSwiftCore", dependencies: ["Prorsum", "HypertextApplicationLanguage"]),
